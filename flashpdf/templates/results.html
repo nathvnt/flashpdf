@@ -1,0 +1,8 @@
+<!doctype html>
+<title>Flashcards</title>
+<h1>Flashcards</h1>
+<ul>
+{% for word, definition in flashcards.items() %}
+    <li><strong>{{ word }}</strong>: {{ definition }}</li>
+{% endfor %}
+</ul>
