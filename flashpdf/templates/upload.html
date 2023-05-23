@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <title>Upload a PDF</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Upload a PDF</h1>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="pdf">
+    <input type="text" name="number_of_terms" placeholder="Enter number of terms">
+    <input type="submit" value="Upload">
+  </form>
+</body>
+</html>
