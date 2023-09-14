@@ -3,14 +3,35 @@
 <head>
   <title>Results</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
 </head>
 <body>
-    <title>Flashcards</title>
     <h1>Flashcards</h1>
-    <ul>
+    <div class="card-controls">
+      <span class="card-info">Card <span id="currentCard">1</span> of <span id="totalCards">{{ flashcards|length }}</span></span>
+      <!-- <button onclick="prevCard()">Previous</button>
+      <button onclick="nextCard()">Next</button>
+      <button onclick="shuffleCards()">Shuffle</button> -->
+      <label class="study-mode">
+          Study Mode:
+          <input type="checkbox" id="studyToggle" onchange="toggleStudyMode()">
+          Start with Definition
+      </label>
+    </div>
+    <div id="cards">
     {% for word, definition in flashcards.items() %}
-        <li><strong>{{ word }}</strong>: {{ definition }}</li>
+        <div class="card"> 
+          <button class="remove-card-btn" onclick="removeCard(this); event.stopPropagation();">Remove Card</button>
+            <div class="front" onclick="flipCard(this)">
+
+              {{ word }}</div>
+            <div class="back" onclick="flipCard(this)">
+              {{ definition }}</div>
+        </div>
     {% endfor %}
-    </ul>
+    </div>
+    <button onclick="nextCard()">Next Card</button>
+    <button onclick="prevCard()">Previous Card</button>
+    <button onclick="shuffleCards()">Shuffle Cards</button>
 </body>
 </html>

@@ -1,3 +1,220 @@
 body {
-    background-color: beige;
+    background-color: black;
+    margin: 0 auto;
+    color: white;
 }
+
+#titleWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 5%;
+}
+#uploadSection{
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgb(163, 162, 162);
+    padding-bottom: 25px;
+}
+#uploadInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Adjust as needed for spacing between the elements */
+}
+/* 
+<input id="browserBTN" type="file" name="pdf">
+<input id="termsInput" type="text" name="number_of_terms" placeholder="Target number of terms">
+<input id="uploadBTN" */
+.file-input__input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 8px;
+    /* z-index: -1; */
+  }
+  
+  .file-input__label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    /* padding: 10px 12px; */
+    background-color: rgb(48, 56, 145);
+    width: 5.5rem;  
+    height: 3.5rem; 
+    padding: 0rem 2rem;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25); */
+  }
+  
+  .file-input__label svg {
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  #selectedFileName {
+    margin-left: 10px;
+    color: #555;
+    font-size: 14px;
+}
+#termsInput{
+    width: 9rem;  
+    height: 3.5rem; 
+    font-size: .8rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0rem 2rem;
+    background-color: rgb(48, 56, 145);
+    color: white;
+    /* margin: 0;
+    padding: 0; */
+}
+
+#uploadBTN{
+    width: 12rem;  
+    height: 3.5rem; 
+    font-size: .8rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0rem 2rem;
+    background-color: rgb(48, 56, 145);
+    color: white; 
+    margin: 0;
+    padding: 0;
+}
+#uploadBTN:hover{
+    border: 2px solid rgb(253, 240, 128);
+} 
+#main, #uploadSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.card-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+.study-mode {
+    display: flex;
+    align-items: center;
+}
+  
+.study-mode input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.flipBTN{
+    width: 10rem;  
+    height: 5rem;  
+    font-size: 4rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0rem 2rem;
+    background-color: rgb(48, 56, 145);
+    color: rgb(253, 240, 128);
+}
+.flipBTN:hover{
+    border: 3px solid rgb(253, 240, 128);
+}
+#cardContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#left{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items:end;
+    width: 25%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#right{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items:start;
+    width: 25%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#cards {
+    position: relative;
+    width: 600px;
+    height: 325px;
+    perspective: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(48, 56, 145);
+    border: 8px solid rgb(253, 240, 128);
+    border-radius: 16px;
+    font-size: 2.4rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .front, .back {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 200px;
+    border-radius: 10px;
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .front {
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .back {
+    transform: rotateY(0deg);
+  }
+  
